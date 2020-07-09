@@ -16,8 +16,9 @@ if(!message.member.hasPermission(["BAN_MEMBERS"])) return message.channel.send("
     }else{
     BanMember.send(`Hello, you have been banned from ${message.guild.name} for: ${reason}`).then(() => {
         message.channel.send(`**${BanMember.tag}** has been banned`)
-        message.guild.member(BanMember.id).ban(reasom);
-}).catch(err => console.log(err)
+        message.guild.member(BanMember.id).ban(reason);
+}).catch( message.channel.send(`**${BanMember.tag}** has been banned`)
+        message.guild.member(BanMember.id).ban(reason);)
 )
     }
 }
