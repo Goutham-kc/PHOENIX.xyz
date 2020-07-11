@@ -29,7 +29,7 @@ embed.addField('Roles',message.guild.roles.cache.filter(r => r.name !== '@everyo
 }
 module.exports.config = {
     name: "serverinfo",
-    aliases: ["server-info","server"],
+    aliases: ["server-info","server", "si],
    category: "Utility",
    usage : "serverinfo",
    description: "See the server info and stuff"
