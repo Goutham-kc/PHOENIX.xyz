@@ -3,7 +3,7 @@ module.exports.run = async (client, message, args) => {
 
 if(!message.member.hasPermission(["KICK_MEMBERS"])) return message.channel.send("<a:redcross:712856288668811369> You dont have permission to perform this command!")
 
-    let kickMember = message.mentions.users.first() || client.users.cache.get(args[0])
+    let kickMember = message.mentions.users.first() || message.guild.members.cache.get(args[0])
     if(!kickMember) return message.channel.send("Please provide a user to kick!")
 
     let reason = args.slice(1).join(" ")
