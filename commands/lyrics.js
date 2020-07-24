@@ -8,10 +8,15 @@ module.exports.run = async (client, message, args) => {
 .then(res => res.json())
 .then(lyrics => {
   if (lyrics.error) return message.reply("no lyrics found");
+  for (let i = 0; i < lyrics.lyrics.length; i += 1000) {
+    let toi = ""
+ toi =
+lyrics.lyrics.substring(i, Math.min(result.length, i + 1000));
   const embed = new Discord.MessageEmbed()
   .setColor('RANDOM')
   .setDescription(lyrics.lyrics)
   return message.channel.send(embed)
+  }
 })
 
 }
