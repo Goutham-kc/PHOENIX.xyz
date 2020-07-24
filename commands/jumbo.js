@@ -1,20 +1,28 @@
 const Discord = require("discord.js")
+const { parse } = require("twemoji-parser");
 
 module.exports.run = async (client, message, args) => {
-    
-    if(!args[0]) return message.channel.send('Please provide an emoji to enlarge')
-        let emotes = Discord.Util.parseEmoji(args[0]);
-        if(emotes.id === null)return message.channel.send(" I only support custom emojis")
-        if(args[1]) return message.channel.send(' currently I only support one emoji at a time')
-        let e = client.emojis.cache.get(emoji => emoji.id == emotes)
-                let link;
-                if(emotes.animated === false){
-                    link = `https://cdn.discordapp.com/emojis/${emotes.id}.png`
-                } 
-                if(emotes.animated == true){
-                    link = `https://cdn.discordapp.com/emojis/${emotes.id}.gif`
-                }
-           message.channel.send({files: [link]})
+
+const emoji = args[0];
+if (!emoji) return message.channel.send("No emoji provided!");
+
+let custom = Discord.Util.parseEmoji(emoji);
+
+if (custom.id) {
+   const embed = new Discord.MessageEmbed()
+      .setTitle(`Enlarged version of ${emoji}`)
+      .setColor("#FFFF00")
+      .setImage(`https://cdn.discordapp.com/emojis/${custom.id}.${custom.animated ? "gif" : "png"}`);
+   return message.channel.send(embed);
+} else {
+   let parsed = parse(emoji, { assetType: "png" });
+   if (!parsed[0]) return message.channel.send("Invalid emoji!");
+   const embed = new Discord.MessageEmbed()
+      .setTitle(`Enlarged version of ${emoji}`)
+      .setColor("#FFFF00")
+      .setImage(parsed[0].url);
+   return message.channel.send(embed);
+}
             }
 module.exports.config = {
     name: "jumbo",
