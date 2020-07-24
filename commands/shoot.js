@@ -1,6 +1,9 @@
 const Discord = require('discord.js')
 const ms = require('parse-ms')
 module.exports.run = async (client,message,args,db) => {
+  let member = message.mentions.users.first() || client.users.cache.get(args[0])
+  let mpassive = await client.db.get(`PassiveMode-${member.id}`)
+  if(!mpassive) mpassive = 'off'
   let passive = await client.db.get(`PassiveMode-${message.member.id}`)
   if(!passive) passive = 'off'
   if(passive == 'on') return message.channel.send('Passive mode is enabled you cant shoot anyone')
@@ -32,12 +35,9 @@ module.exports.run = async (client,message,args,db) => {
       })
     }
     if(q.exists){
-      let member = message.mentions.users.first() || client.users.cache.get(args[0])
       if(!member) return message.channel.send("Provide an user to shoot")
       if(member.id == message.author.id) return message.channel.send("You dont wanna shoot yourself")
-      let mpassive = await client.db.get(`PassiveMode-${member.id}`)
-      if(!passive) passive = 'off'
-      if(passive == 'on') return message.channel.send('Levae the poor guy alone')
+      if(mpassive == 'on') return message.channel.send('Levae the poor guy alone')
       db.collection('Userinfo').doc(member.id).get().then((a) => {
         if (!a.exists) {
           db.collection('Userinfo').doc(member.id).set({
