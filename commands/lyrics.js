@@ -11,7 +11,7 @@ module.exports.run = async (client, message, args) => {
   for (let i = 0; i < lyrics.lyrics.length; i += 1000) {
     let toi = ""
  toi =
-lyrics.lyrics.substring(i, Math.min(result.length, i + 1000));
+lyrics.lyrics.substring(i, Math.min(lyrics.lyrics.length, i + 1000));
   const embed = new Discord.MessageEmbed()
   .setColor('RANDOM')
   .setDescription(lyrics.lyrics)
