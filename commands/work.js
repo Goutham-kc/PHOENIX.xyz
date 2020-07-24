@@ -57,7 +57,7 @@ if(work === "Chef"){
   db.collection('Userinfo').doc(message.author.id).update({
                 'cash' : wcash +=200
               })
-   message.channel.send("You worked as a Youtuber and got $200:dollar ")
+   message.channel.send("You worked as a Youtuber and got $200:dollar: ")
 }else if(work === "Streamer"){
   db.collection('Userinfo').doc(message.author.id).update({
                 'cash' : wcash +=250
