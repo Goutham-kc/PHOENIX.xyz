@@ -10,7 +10,7 @@ let person = message.mentions.users.first() || client.users.cache.get(args[0])
 
         const embed = new Discord.MessageEmbed()
             .setColor("#ffb6c1")
-            .addField(`☁ **${person.username}** loves **${message.member.displayName}** this much:`,
+            .addField(`**${person.username}** loves **${message.member.displayName}** this much:`,
             `💟 ${Math.floor(love)}%\n\n${loveLevel}`);
 
         message.channel.send(embed);
