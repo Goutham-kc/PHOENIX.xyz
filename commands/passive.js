@@ -16,10 +16,10 @@ module.exports.run = async (client,message,args,db) => {
     let left = ms(timeout - (Date.now() - time))
     message.channel.send(`You can toggle you passive mode again in **${left.hours}hr ${left.minutes}m ${left.seconds}s`)
     }else{
+        client.db.set(`Passive-${message.member.id}`,Date.now())
     client.db.set(`PassiveMode-${message.member.id}`,`on`).then(()=>{
         message.channel.send(`Passive mode set to \`on\``)
     })
-    client.db.set(`Passive-${message.member.id}`,Date.now())
     }
  } else if(arg == 'off'){
     if(passive == 'off') return message.channel.send('Passive mode is already turned off')
@@ -27,10 +27,10 @@ module.exports.run = async (client,message,args,db) => {
      let left = ms(timeout - (Date.now() - time))
      message.channel.send(`You can toggle you passive mode again in **${left.hours}hr ${left.minutes}m ${left.seconds}s`)
      }else{
+        client.db.set(`Passive-${message.member.id}`,Date.now())
      client.db.set(`PassiveMode-${message.member.id}`,`off`).then(()=>{
          message.channel.send(`Passive mode set to \`off\``)
      })
-     client.db.set(`Passive-${message.member.id}`,Date.now())
      }
     } else{
     message.channel.send('Change your passive mode to `on` or `off`')
