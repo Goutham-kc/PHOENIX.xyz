@@ -5,9 +5,9 @@ module.exports.run = async (client,message,args,db) => {
     let time = await client.db.get(`Passive-${message.member.id}`)
     if(!time) time = 0;
     let arg = message.content.split(" ").slice(1)
+    let passive = await client.db.get(`PassiveMode-${message.member.id}`)
+    if(!passive) passive = 'off'
     if(arg.length == 0){
-   let passive = await client.db.get(`PassiveMode-${message.member.id}`)
-   if(!passive) passive = 'off'
  message.channel.send(`Passive Mode is turned \`off\` `)
     } else {
     if(arg == 'on'){
