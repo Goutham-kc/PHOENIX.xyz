@@ -8,7 +8,7 @@ message.delete()
       .setTitle("New Poll!")
       .setColor("#00000")
       .setDescription(`${question}`)
-      .setFooter(`pool started by: ${message.author.username}`, `${message.author.avatarURL}`)
+      .setFooter(`Poll started by: ${message.author.username}`, `${message.author.displayAvatarURL()}`)
 
 message.channel.send(pollEmbed)
   .then(msg => {

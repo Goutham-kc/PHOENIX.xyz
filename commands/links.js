@@ -15,7 +15,7 @@ var em = new Discord.MessageEmbed()
 }
 module.exports.config = {
     name: "links",
-    aliases: [],
+    aliases: ['link'],
    category: "Miscellaneous",
    usage : "links",
    description: "Sends the list of links concerned with the bot"
