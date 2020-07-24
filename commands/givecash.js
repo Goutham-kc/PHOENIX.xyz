@@ -26,6 +26,9 @@ module.exports.run = async (client, message, args, db) => {
         let member = message.mentions.users.first() || client.users.cache.get(args[0]);
         if(!member)return message.channel.send("Provide an user to transfer money")
         if(member.id === message.author.id) return message.channel.send("You cant send yourself money dumb")
+        let passive = await client.db.get(`PassiveMode-${member.id}`)
+    if(!passive) passive = 'off'
+    if(passive == 'on') return message.channel.send('You cant give cash to a user in passive')
         let wcash;
      wcash = q.data().cash
   db.collection('Userinfo').doc(member.id).get().then((a) => {
