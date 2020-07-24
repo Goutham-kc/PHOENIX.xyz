@@ -1,7 +1,26 @@
 const Discord = require('discord.js')
 const config = require('../config.json')
 module.exports.run = async (client, message, args) => {
-  let replies = ["Yes", "No","Outlook not so good"," Don't count on it"," Better not tell you now", "Signs point to yes", "Most likely", "I don't know", "Ask again later!", "Dont Force me bitch", "I am not sure!", "Pls No", "You tell me", "How am i supposed to know smartass", "aint got time for your shit ", "Without a doubt", ];
+  let replies = [   "It is certain.", 
+  "It is decidedly so.",
+  "Without a doubt.",
+  "Yes - definitely.",
+  "You may rely on it.",
+  "As I see it, yes.",
+  "Most likely.",
+  "Outlook good.",
+  "Yes.",
+  "Signs point to yes.",
+  "Reply hazy, try again.",
+  "Ask again later.",
+  "Better not tell you now.",
+  "Cannot predict now.",
+  "Concentrate and ask again.",
+  "Don't count on it.",
+  "My reply is no.",
+  "My sources say no.",
+  "Outlook not so good.",
+  "Very doubtful."];
  let arg = message.content.split(" ").slice(1);
     let result = Math.floor((Math.random() * replies.length));
     let question = arg.join(" ");
