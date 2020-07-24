@@ -1,21 +1,28 @@
-const { MessageEmbed } = require("discord.js");
+
+const q = require ("querystring");
 const fetch = require("node-fetch");
-const Discord = require('discord.js')
 module.exports.run = async (client, message, args, db) => {
-const [query, src] = args;
-if(!query) return message.channel.send("https://discord.js.org");
-
-const embed = await (await fetch(`https://djsdocs.sorta.moe/v2/embed?src=${src|| "stable"}&q=${query.replace(/#/g, ".")}`).json());
-if (!embed || embed.error) return message.reply("What is that!");
-
-const docEmbed = new MessageEmbed(embed)
-  .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
-  .setTitle(`Discord.js (${args[1] || "stable"}`)
-  .setTimestamp();
-
-return message.channel.send(docEmbed);
-
-}
+    try {
+        let src = "stable";
+        let arg = args.join(" ");
+        
+        let query = q.stringify({src:src,q:arg});
+        
+        const dio = await fetch(`https://djsdocs.sorta.moe/v2/embed?${query}`);
+        const embed = await dio. json ();
+         
+          if(embed) {
+          message.channel.send({embed});
+          } else {
+            message. channel. send ("> Couldn't find docs related to it");
+          };
+        
+        } catch(r) {
+          console.log(r)
+          message.channel.send(r.message);
+        };
+        
+      }
 module.exports.config = {
     name: "djs",
     aliases: ['discord-js'],
