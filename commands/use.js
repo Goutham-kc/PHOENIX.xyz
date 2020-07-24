@@ -133,7 +133,7 @@ db.collection('Premiums').doc('Keys').get().then((a) => {
      let obj = arg.join(" ")
      obj = obj.toLowerCase()
      if(obj == "normal lootbox"){
-         if(nloot ==0 )return message.channel.send("You have zero Normal lootbox to open")
+         if(nloot < 0 )return message.channel.send("You have zero Normal lootbox to open")
        let rn = Math.floor(Math.random()*10)
        console.log(rn)
        if(rn >= 1 && rn <= 3){

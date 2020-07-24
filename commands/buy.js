@@ -53,7 +53,7 @@ if(!a.exists){
     'Mlootbox' : 0,
     'Llootbox' : 0
   }).then(()=>{
-    message.reply('your the lucky winner take this 2 normal lootbox')
+    message.reply('Your the lucky winner take this 2 normal lootbox')
   })
 }
 if(a.exists){

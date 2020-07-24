@@ -37,7 +37,7 @@ module.exports.run = async (client,message,args,db) => {
     if(q.exists){
       if(!member) return message.channel.send("Provide an user to shoot")
       if(member.id == message.author.id) return message.channel.send("You dont wanna shoot yourself")
-      if(mpassive == 'on') return message.channel.send('Levae the poor guy alone')
+      if(mpassive == 'on') return message.channel.send('Leave the poor guy alone')
       db.collection('Userinfo').doc(member.id).get().then((a) => {
         if (!a.exists) {
           db.collection('Userinfo').doc(member.id).set({
