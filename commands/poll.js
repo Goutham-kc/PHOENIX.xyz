@@ -7,13 +7,13 @@ message.delete()
   const pollEmbed = new Discord.MessageEmbed()
       .setTitle("New Poll!")
       .setColor("#00000")
-      .setDescription(`${question}`)
+      .setDescription(`${question.join(' ')}`)
       .setFooter(`Poll started by: ${message.author.username}`, `${message.author.displayAvatarURL()}`)
 
 message.channel.send(pollEmbed)
   .then(msg => {
-  msg.react(':thumbsup:')
-  msg.react(':thumbsdown:')
+  msg.react('👍')
+  msg.react('👎')
   }).catch(err => console.log(err))
 }
 module.exports.config = {
