@@ -13,7 +13,8 @@ message.delete()
 message.channel.send(pollEmbed)
   .then(msg => {
   msg.react(':thumbsup:')
-  })
+  msg.react(':thumbsdown:')
+  }).catch(err => console.log(err))
 }
 module.exports.config = {
     name: "poll",
