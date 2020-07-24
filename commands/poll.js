@@ -18,7 +18,7 @@ message.channel.send(pollEmbed)
     message.react('👍')
     message.react('👎')
   })
-  .catch(() => console.error('Failed to react.'));
+  .catch(() => message.channel.send(`I am missing permission to react`));
 }
 module.exports.config = {
     name: "poll",
