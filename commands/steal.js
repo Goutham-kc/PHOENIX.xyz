@@ -90,7 +90,7 @@ db.collection('Userinfo').doc(message.author.id).update({
 })
 }
 if(rnumber < 0.5){
-let idk =   wcash/Math.floor(Math.random()*5)
+let idk =   Math.floor(wcash/Math.floor(Math.random()*5))
 db.collection('Userinfo').doc(message.author.id).update({
     'cash': wcash += idk
 }).then(()=>{
