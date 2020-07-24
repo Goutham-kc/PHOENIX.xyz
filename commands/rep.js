@@ -34,6 +34,7 @@ if(q.exists){
  })
 }
 if(member){
+  if(member.id == message.author.id) return message.channel.send('You cant rep yourself')
  db.collection('Userinfo').doc(member.id).get().then((q)=>{
 if(!q.exists){
   if (timeout - (Date.now() - time) > 0) {
@@ -59,10 +60,6 @@ if(!q.exists){
     message.channel.send(`${message.author.username} gave ${member.username} **1** rep point :star:`)
   })
 }
-reptime.add(message.author.id);
-        setTimeout(() => {
-     reptime.delete(message.author.id);
-        }, 864000);
 }
 if(q.exists){
   if (timeout - (Date.now() - time) > 0) {
