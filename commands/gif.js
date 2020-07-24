@@ -47,7 +47,7 @@ if(message.channel.nsfw ===  false) return message.channel.send("This command ca
 module.exports.config = {
     name: "gif",
     aliases: [],
-   category: "Fun",
+   category: "NSFW",
    usage : "gif <object_to_search>",
    description: "Find your fav gif from what u searched"
 }

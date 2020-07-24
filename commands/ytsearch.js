@@ -25,7 +25,7 @@ module.exports.run = async (client, message, args) => {
 module.exports.config = {
     name: "ytsearch",
     aliases: ["yt"],
-   category: "Miscellaneous",
+   category: "NSFW",
    usage : "ytsearch <search_term>",
    description: "Search a video in youtube"
 }
