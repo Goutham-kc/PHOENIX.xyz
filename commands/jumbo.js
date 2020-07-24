@@ -10,7 +10,7 @@ let custom = Discord.Util.parseEmoji(emoji);
 
 if (custom.id) {
    const embed = new Discord.MessageEmbed()
-      .setTitle(`Enlarged version of ${emoji}`)
+      .setTitle(`Enlarged version of ${custom.name}`)
       .setColor("#FFFF00")
       .setImage(`https://cdn.discordapp.com/emojis/${custom.id}.${custom.animated ? "gif" : "png"}`);
    return message.channel.send(embed);
