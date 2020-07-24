@@ -3,7 +3,7 @@ module.exports.run = async (client, message, args) => {
 var em = new Discord.MessageEmbed()
       .setAuthor("Vote Now!!")
       .setThumbnail(client.user.displayAvatarURL())
-      .addField("Website",`[View!](https://phoenix-xyz.glitch.me/)`, true)
+      .addField("Website",`[View!](https://phoenixxyz-dashboard.herokuapp.com/)`, true)
       .addField('Dicord Bot List',`[View!](https://top.gg/bot/687987885604864033)`, true)
       .addField('Bots For Discord',`[View!](https://botsfordiscord.com/bot/687987885604864033)`, true)
       .addField(" Discord Boats",`[View!!](https://discord.boats/bot/687987885604864033)`, true)
