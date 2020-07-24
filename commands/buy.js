@@ -1,5 +1,8 @@
 const Discord = require('discord.js')
 module.exports.run = async (client, message, args, db) => {
+  let apassive = await client.db.get(`PassiveMode-${message.member.id}`)
+  if(!apassive) apassive = 'off'
+  if(apassive == 'on') return message.channel.send('You cant buy anything if your in passive')
     let premium;
        let wcash;
       let bcash;
