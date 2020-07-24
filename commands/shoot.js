@@ -1,6 +1,9 @@
 const Discord = require('discord.js')
 const ms = require('parse-ms')
 module.exports.run = async (client,message,args,db) => {
+  let passive = await client.db.get(`PassiveMode-${message.member.id}`)
+  if(!passive) passive = 'off'
+  if(passive == 'on') return message.channel.send('Passive mode is enabled you cant shoot anyone')
   const timeout = 18000000;
   let time = await client.db.get(`Pistol-${message.member.id}`)
   if(!time)time = 0
