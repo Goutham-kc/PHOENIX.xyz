@@ -13,7 +13,7 @@ module.exports.run = (client, message, args) => {
             .map(cmd => `\`${cmd.config.name}\``)
             .join(", "));
     }
-embed.addField(`DashBoard`,`[Click here](https://phoenixxyz-dashboard.herokuapp.com/)`)
+embed.setFooter(`[WebDashBoard](https://phoenixxyz-dashboard.herokuapp.com/)`)
        message.channel.send(embed)
     }
     if(arg.length !==0){
