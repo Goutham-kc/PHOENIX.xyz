@@ -6,7 +6,7 @@ module.exports.run = async (client, message, args) => {
     .setColor("RED")
     .setThumbnail(client.user.displayAvatarURL())
     .addField("Created On",`\`${new Date(client.user.createdAt).toLocaleString('en-gb')}\`` )
-    .addField("Owner:",`\`Shadow.#696\`\n\`Wolfie#1185\``,true)
+    .addField("Owner:",`\`Shadow.#0022\`\n\`Wolfie#1185\``,true)
     .addField("Language:",`\`JavaScript\``,true)
     .addField('Library:',`\`discord.js ${require('discord.js').version}\``,true)
     .addField("Servers", `\`${client.guilds.cache.size}\``, true)
