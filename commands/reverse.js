@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 module.exports.run = async (client, message, args) => {
 
       let arg = message.content.split(" ").slice(1); 
-      if(!arg) return message.channel.send('Give a text or sentence to reverse')
+      if(arg.length == 0) return message.channel.send('Give a text or sentence to reverse')
        let input = arg.join(' ');
        var revem = new Discord.MessageEmbed()
        .setColor("RANDOM")
