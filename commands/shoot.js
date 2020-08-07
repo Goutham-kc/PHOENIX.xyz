@@ -77,10 +77,10 @@ module.exports.run = async (client,message,args,db) => {
                 let left = ms(timeout - (Date.now() - time))
                 message.channel.send(`You already used your pistol you can use again in **${left.hours}h ${left.minutes}m ${left.seconds}s**`)
         } else {
-          client.db.set(`Pistol-${message.member.id}`,Date.now())
               if(wcash2 < 500)return message.channel.send("The user doesnt even have $500. Not Worth it")
             if(bullet == 0)return message.channel.send("You dont have any pistol bullet to shoot. Buy from shop")
-              let randomMoney = Math.floor(Math.random()*wcash2/2)
+            client.db.set(`Pistol-${message.member.id}`,Date.now())  
+            let randomMoney = Math.floor(Math.random()*wcash2/2)
               db.collection('Userinfo').doc(message.author.id).update({
                 'cash': wcash +=randomMoney,
                 'pbullet': bullet -=1
@@ -97,8 +97,8 @@ module.exports.run = async (client,message,args,db) => {
                  let left = ms(timeout - (Date.now() - time2))
                 message.channel.send(`You already used your rifle you can use again in **${left.hours}h ${left.minutes}m ${left.seconds}s**`)
         } else {
-         client.db.set(`Rifle-${message.member.id}`,Date.now())
               if(projectile == 0)return message.channel.send('You dont have any projectile to shoot.Buy from shop')
+              client.db.set(`Rifle-${message.member.id}`,Date.now())
               let randomMoney = Math.floor(Math.random()*wcash2)
               let shaka = randomMoney-wcash2
                let randomMoney2= Math.floor(Math.random()*shaka)
