@@ -58,8 +58,17 @@ module.exports.run = async (client, message, args, db) => {
       if(wcash < 50000)return message.channel.send("You need 50k to buy a premium key")
       if(wcash >= 50000){
         const key = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-        message.author.send(`You have successfully generated a premium key: \`${key}\``).catch(err => {
-          message.channel.send(`You have successfully generated a premium key: \`${key}\``)
+        message.author.send(`You have successfully generated a premium key: \`${key}\``).then(() => {
+          const channel = client.channels.cache.get('741531339022532678')
+          const chem = new Discord.MessageEmbed()
+          .setTitle(`Premium purchased`)
+          .setAuthor(`Purchased by ${message.author.tag}`)
+          .setThumbnail(message.author.displayAvatarURL())
+          .addField(`Server`,`${message.guild.name}`)
+          .setTimestamp()
+          channel.send(chem)
+        }).then(() => {
+          message.channel.send('If your dm was disabled to did not recieve the code please contact the support server')
         })
           db.collection('Premiums').doc("Keys").get().then((a) => {
         if(!a.exists){
