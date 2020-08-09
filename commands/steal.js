@@ -4,7 +4,7 @@ module.exports.run = async (client,message,args,db) => {
     const timeout = 3600000;
     let time = await client.db.get(`Steal-${message.member.id}`)
     if(!time) time = 0;
-    const member = message.mentions.users.first() ||   client.users.cache.get(args[0]) || null;
+    const member = message.mentions.users.first();
     let passive = await client.db.get(`PassiveMode-${message.member.id}`)
     if(!passive) passive = 'off'
     if(passive == 'on') return message.channel.send('You cant rob when you in passive')
