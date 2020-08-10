@@ -32,9 +32,7 @@ client.db.set(`Beg-${message.member.id}`,Date.now())
          'rifle' : false,
          'pbullet' : 0,
             'rbullet' : 0,
-            'selected' : 'Null',
-            'upad':0,
-            'mpad': 0
+            'selected' : 'Null'
   }).then(() => {
 message.channel.send(`You've begged and received $${bc} :dollar:`)
 })

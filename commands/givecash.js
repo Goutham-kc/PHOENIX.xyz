@@ -21,9 +21,7 @@ module.exports.run = async (client, message, args, db) => {
              'rifle' : false,
              'pbullet' : 0,
                 'rbullet' : 0,
-                'selected' : 'Null',
-                'upad':0,
-                'mpad': 0
+                'selected' : 'Null'
       }).then(() =>{ 
         message.channel.send("You dont have any money to give")
     })
@@ -53,9 +51,7 @@ module.exports.run = async (client, message, args, db) => {
              'pistol' : false,
              'rifle' : false,
              'pbullet' : 0,
-                'rbullet' : 0,
-                'upad':0,
-                'mpad': 0
+                'rbullet' : 0
       }).then(()=>{
         message.channel.send(`Amount of $${gcash} :dollar:  has been given to ${member.tag}`)
       })

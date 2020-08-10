@@ -16,9 +16,7 @@ module.exports.run = async (client, message, args, db) => {
         'rifle': false,
         'pbullet': 0,
         'rbullet': 0,
-        'selected': 'Null',
-        'upad': 0,
-        'mpad': 0
+        'selected': 'Null'
       }).then(() => {
         const profile = new Discord.MessageEmbed()
           .setTitle(`Profile of ${member.username}`)

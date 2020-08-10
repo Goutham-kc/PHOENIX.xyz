@@ -19,9 +19,7 @@ module.exports.run = async (client, message, args, db) => {
          'rifle' : false,
          'pbullet' : 0,
             'rbullet' : 0,
-            'selected' : 'Null',
-            'upad':0,
-            'mpad': 0
+            'selected' : 'Null'
   }).then(()=>{
     message.channel.send(new Discord.MessageEmbed()  .setTitle(`${member.username}\'s Balance`) .setColor("GREEN") .addField("**Wallet:**",`0`) .addField("**Bank**",`0/2000`))
   })

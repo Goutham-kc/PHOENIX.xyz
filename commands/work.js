@@ -31,9 +31,7 @@ if(!premium) premium = false
                'rifle' : false,
                'pbullet' : 0,
                   'rbullet' : 0,
-                  'selected' : 'Null',
-                  'upad':0,
-                  'mpad': 0
+                  'selected' : 'Null'
           }).then(()=>{
             message.channel.send(`You dont have a single penny to pay for your job interview`)
           }) 

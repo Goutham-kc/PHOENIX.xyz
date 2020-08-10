@@ -21,9 +21,7 @@ db.collection('Userinfo').doc(message.author.id).set({
          'rifle' : false,
          'pbullet' : 0,
             'rbullet' : 0,
-         'selected' : 'Null',
-         'upad':0,
-         'mpad': 0
+         'selected' : 'Null'
   })
   message.channel.send(`You have a total of **0** rep point(s) :star:`)
 }

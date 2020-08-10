@@ -28,9 +28,7 @@ module.exports.run = async (client, message, args, db) => {
              'rifle' : false,
              'pbullet' : 0,
                 'rbullet' : 0,
-                'selected' : 'Null',
-                'upad':0,
-                'mpad': 0
+                'selected' : 'Null'
       }).then(() =>{ 
         message.channel.send("You have **Claimed** the premium key")
       })
