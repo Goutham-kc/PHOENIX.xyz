@@ -5,12 +5,12 @@ module.exports.run = async (client,message,args,db) => {
     let time = await client.db.get(`Steal-${message.member.id}`)
     if(!time) time = 0;
     const member = message.mentions.users.first() || client.users.cache.get(args[0]);
+     if(!member)return message.channel.send(`You need to mention a user to rob`)
     let passive = await client.db.get(`PassiveMode-${message.member.id}`)
     if(!passive) passive = 'off'
     if(passive == 'on') return message.channel.send('You cant rob when you in passive')
     let mpassive = await client.db.get(`PassiveMode-${member.id}`)
     if(!mpassive) mpassive = 'off'
-    if(!member)return message.channel.send(`You need to mention a user to rob`)
     if(member.id == message.author.id)return message.channel.send(`You cant rob your-self dumb dumb`)
     if(mpassive == 'on') return message.channel.send('Leave the poor guy alone')
     db.collection('Userinfo').doc(message.author.id).get().then((q)=>{
