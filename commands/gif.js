@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 const giphy = require('giphy-api')("W8MLXRA7voSfoA1nBAxAzht4qwjEGk7O");
 module.exports.run = async (client, message, args) => {
 let term;
-if(message.channel.nsfw ===  false) return message.channel.send("This command can only be used in a nsfw channel")
+if(message.channel.nsfw == false) return message.channel.send("This command can only be used in a nsfw channel")
   if (args.length === 0) {
    return message.channel.send('No Search terms!')
   }
