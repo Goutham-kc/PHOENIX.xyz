@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
       if (message.content.includes('@everyone')) return message.channel.send("<a:redcross:712856288668811369>Mass mention is not allowed in this comand")
        if (message.content.includes('@here')) return message.channel.send("<a:redcross:712856288668811369>Mass mention is not allowed in this comand")
          message.delete();
-        message.channel.send(sayMessage);
+        message.channel.send(sayMessage,{allowedMentions: {parse: []}});
 }
 module.exports.config = {
     name: "say",
