@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 const discordJokes = require('custom-discord-jokes')
 module.exports.run = async (client, message, args) => {
-   customDiscordJokes.getRandomDadJoke(function(joke){
+   discordJokes.getRandomDadJoke(function(joke){
         message.channel.send(joke)
     })
 }
