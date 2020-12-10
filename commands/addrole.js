@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 module.exports.run = async (client, message, args) => {
-  if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send("<a:redcross:676450631686553602> You dont have permission to perform this command!");
+  if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send("<a:redcross:712856288668811369> You dont have permission to perform this command!");
       let member = message.mentions.users.first() || client.users.cache.get(args[0]);
       if(!member) return message.channel.send("Provide a User..");
      const arg  = message.content.split(' ').slice(2)

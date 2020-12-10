@@ -5,7 +5,7 @@ const fs = require('fs')
 const FieldValue = require('firebase-admin').firestore.FieldValue;
 module.exports.run = async (client,message,args,db,prefix) => {
     let owners = ['685506829228179515','612283933480058956']
-    if(!owners.includes(message.author.id)) return message.channel.send("You are forbidden <a:redcross:688007167755944007>, This command is Owner only");
+    if(!owners.includes(message.author.id)) return message.channel.send("You are forbidden <a:redcross:712856288668811369>, This command is Dev only");
     let array = []
 db.collection('Premiums').doc('Keys').get().then((a) => {
     if (a.exists) {
