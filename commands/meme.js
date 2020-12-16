@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 const fetch = require('node-fetch'); 
 module.exports.run = async (client, message, args) => {
  const embed = new Discord.MessageEmbed() 
-    message.channel.send(embed.setColor("BLUE").setDescription('Generating..')).then(m => { 
+    message.channel.send(embed.setColor("BLUE").setDescription('Generating.')).then(m => { 
         fetch('https://www.reddit.com/r/meme/hot/.json?limit=100')
     .then(res => res.json()).then(body => {
   
