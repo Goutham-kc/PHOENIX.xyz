@@ -48,7 +48,7 @@ device = "NONE"
             .addField("Nickname",nick,true)
             .addField('Device:',device,true)
             .addField('Badges',badge)
-            .setFooter(`Account create at ${new Date(member.createdAt).toLocaleString('en-gb')}`)
+            .setFooter(`Account created at ${new Date(member.createdAt).toLocaleString('en-gb')}`)
             .setTimestamp();
             if(rolecount == 1){
                 whoem.addField('Roles:','NONE')
