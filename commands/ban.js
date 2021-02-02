@@ -2,8 +2,7 @@ const Discord = require('discord.js')
 module.exports.run = async (client, message, args) => {
 if(!message.member.hasPermission(["BAN_MEMBERS"])) return message.channel.send("<a:redcross:712856288668811369> You must have BAN_MEMBERS permission to perform this command!")
 
-    let BanMember = message.mentions.users.first() || message.guild.members.fetch(args[0])
-    console.log(args[0])
+    let BanMember = message.mentions.users.first()
     if(!BanMember) return message.channel.send("Please provide a user to ban!")
 
     let reason = args.slice(1).join(" ")
