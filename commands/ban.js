@@ -9,7 +9,7 @@ if(!message.member.hasPermission(["BAN_MEMBERS"])) return message.channel.send("
     let reason = args.slice(1).join(" ")
     if(!reason) reason = "No reason given!" 
     if(!message.guild.me.hasPermission(["BAN_MEMBERS"])) return message.channel.send("I dont have permission to do this!")
-    if(!message.guild.member(BanMember).bannable)return message.channel.send("I cannot ban this user")
+    if(message.guild.member(BanMember).bannable = false)return message.channel.send("I cannot ban this user")
     if(BanMember.bot){
         message.channel.send(`**${BanMember.tag}** has been banned`).then(()=>{
             message.guild.member(BanMember.id).ban({ reason: reason });
