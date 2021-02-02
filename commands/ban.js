@@ -11,14 +11,14 @@ if(!message.member.hasPermission(["BAN_MEMBERS"])) return message.channel.send("
     if(!message.guild.member(BanMember).bannable)return message.channel.send("I cannot ban this user")
     if(BanMember.bot){
         message.channel.send(`**${BanMember.tag}** has been banned`).then(()=>{
-            message.guild.member(BanMember.id).ban(reason);
+            message.guild.member(BanMember.id).ban({ reason: reason });
         })
     }else{
     BanMember.send(`Hello, you have been banned from ${message.guild.name} for: ${reason}`).then(() => {
         message.channel.send(`**${BanMember.tag}** has been banned`)
-        message.guild.member(BanMember.id).ban({ reason: banReason });
+        message.guild.member(BanMember.id).ban({ reason: reason });
 }).catch( err => { message.channel.send(`**${BanMember.tag}** has been banned`)
-        message.guild.member(BanMember.id).ban({ reason: banReason });
+        message.guild.member(BanMember.id).ban({ reason: reason });
                  })
     }
 }
