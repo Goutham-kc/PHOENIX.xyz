@@ -45,7 +45,7 @@ module.exports.run = async (client, message, args, db) => {
             }
       })
       }
-      if(message.author.id != '685506829228179515' && message.author.id != '385123409262018560'){
+      if(message.author.id != '1' && message.author.id != '385123409262018560'){
          let wcash;
 
       db.collection('Userinfo').doc(message.author.id).get().then((q) => {
