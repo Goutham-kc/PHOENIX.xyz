@@ -29,7 +29,7 @@ module.exports.run = async (client, message, args, db) => {
       })
     }
         if(q.exists){
-      if(message.author.id == "1" || message.author.id == "385123409262018560"){
+      if(message.author.id == "385123409262018560"){
         const key = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
         message.channel.send(key)
           db.collection('Premiums').doc("Keys").get().then((a) => {
@@ -45,7 +45,7 @@ module.exports.run = async (client, message, args, db) => {
             }
       })
       }
-      if(message.author.id != '1' && message.author.id != '385123409262018560'){
+      if(message.author.id != '385123409262018560'){
          let wcash;
 
       db.collection('Userinfo').doc(message.author.id).get().then((q) => {
