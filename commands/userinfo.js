@@ -1,6 +1,5 @@
 const Discord = require('discord.js')
 module.exports.run = async (client, message, args) => {
-    message.channel.send('Fixing...') return;
     const status = { online: "Online  <a:online:712855967653429308>", idle: "Idle <a:idle:688011476996325386>", dnd: "Do Not Disturb <a:dnd:712855705748766740>", offline: "Offline <a:offline:712856440435376239>" };
     let member = message.mentions.users.first() || client.users.cache.get(args[0]) || message.author;
     if(!message.guild.member(member)) member = message.author
@@ -60,7 +59,7 @@ device = "NONE"
                 whoem.addField('Roles:',message.guild.member(member).roles.cache.filter(r => r.name !== '@everyone').sort((a,b)=> b.position - a.position).first(15).map(r => r).join(' > ')+` And ${rolecount-15} more...`)
             }
         }
-              message.channel.send(whoem);
+              message.channel.send('Fixing...');
             }
 module.exports.config = {
     name: "userinfo",
