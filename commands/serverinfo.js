@@ -25,7 +25,7 @@ embed.addField('Roles',message.guild.roles.cache.filter(r => r.name !== '@everyo
   }else{
     embed.addField('Roles',message.guild.roles.cache.filter(r => r.name !== '@everyone').sort((a, b) => b.position - a.position).first(15).map(r => r).join(' > ').toString()+` And ${rolecount-15} more...`)
   }
-  message.channel.send(embed);
+  message.channel.send('Fixing..');
 }
 module.exports.config = {
     name: "serverinfo",
