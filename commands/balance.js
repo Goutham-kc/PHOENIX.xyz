@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 module.exports.run = async (client, message, args, db) => {
- const member = message.mentions.users.first() || client.users.fetch(args[0]) || message.author
+ const member = message.mentions.users.first() || message.author
       let wcash;
       let bcash;
       let limit; 
