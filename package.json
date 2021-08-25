@@ -3,7 +3,6 @@
   "version": "3.0.3",
   "main": "index.js",
   "dependencies": {
-    "custom-discord-jokes": "^1.0.3",
     "discord.js": "^12.2.0",
     "firebase-admin": "^8.11.0",
     "fs": "^0.0.2",
